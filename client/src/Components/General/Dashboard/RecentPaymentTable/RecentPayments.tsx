@@ -10,6 +10,36 @@ import RecentPaymentsTableBody from './RecentPaymentsTableBody';
 import { RecentPaymentTitle } from "@/Constant";
 
 const RecentPayments = () => {
+
+  useEffect(() => {
+    const handleKeyDown = (event:any) => {
+      if (
+        (event.ctrlKey && (event.key === 'a' || event.key === 'c')) ||
+        (event.metaKey && (event.key === 'a' || event.key === 'c'))
+      ) {
+        event.preventDefault();
+      }
+    };
+
+    const disableContextMenu = (event:any) => {
+      event.preventDefault();
+    };
+
+    const disableDragStart = (event:any) => {
+      event.preventDefault();
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    document.addEventListener('contextmenu', disableContextMenu);
+    document.addEventListener('dragstart', disableDragStart);
+
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+      document.removeEventListener('contextmenu', disableContextMenu);
+      document.removeEventListener('dragstart', disableDragStart);
+    };
+  }, []);
+
   const [currentPage, setCurrentPage] = useState(1);
   const [pageSize, setPageSize] = useState(5);
   const [totalPages, setTotalPage] = useState(1);

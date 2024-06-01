@@ -176,11 +176,11 @@ const DealerListContainer = () => {
             selector: (row: { createdAt: any; }) => moment(row.createdAt).format("DD-MM-YYYY"),
             sortable: true,
         },
-        !editError || !deleteError ? {
-            name: "Actions",
-            minWidth: '100px',
-            cell: (row: any) => <DealerListTableAction data={row} />,
-        } : {}
+        // !editError || !deleteError ? {
+        //     name: "Actions",
+        //     minWidth: '100px',
+        //     cell: (row: any) => <DealerListTableAction data={row} />,
+        // } : {}
     ];
 
     return (
