@@ -4,6 +4,8 @@ const Product = require("../models/product");
 const Transaction = require("../models/transaction");
 const PaymentLink = require("../models/paymentlink");
 const crypto = require("crypto");
+// const tf = require('@tensorflow/tfjs-node'); // Use tfjs-node for backend operations
+
 
 async function getUsers(req, res) {
   try {
@@ -57,7 +59,7 @@ async function generatePaymentLink(req, res) {
     });
     await paymenLink.save();
   
-    const paymentLinkUrl = `https://example.com/pay?token=${token}`;
+    const paymentLinkUrl = `https://dhiwise.com/pay?token=${token}`;
     res.json({ paymentLink: paymentLinkUrl });
   } catch (error) {
     console.error("Error:", error);
@@ -91,6 +93,35 @@ async function completePayment(req, res) {
   }
 }
 
+// const fetchDataAndTrainModel = async () => {
+//   try {
+//     const response = await axios.get('http://localhost:7000/user/get-order');
+//     const data = response.data;
+    
+//     // Preprocess data (assuming data has orderDate and totalPrice)
+//     data.forEach(item => item.orderDate = new Date(item.orderDate));
+
+//     // Example preprocessing
+//     const dates = data.map(item => item.orderDate.getTime());
+//     const prices = data.map(item => item.totalPrice);
+
+//     // TensorFlow.js model
+//     const xs = tf.tensor2d(dates, [dates.length, 1]);
+//     const ys = tf.tensor2d(prices, [prices.length, 1]);
+
+//     const model = tf.sequential();
+//     model.add(tf.layers.dense({ units: 1, inputShape: [1] }));
+//     model.compile({ loss: 'meanSquaredError', optimizer: 'sgd' });
+
+//     await model.fit(xs, ys, { epochs: 10 });
+
+//     return model;
+//   } catch (error) {
+//     console.error('Error fetching data:', error);
+//     throw error;
+//   }
+// };
+
 
 module.exports = {
   getUsers,
@@ -98,5 +129,6 @@ module.exports = {
   getProducts,
   getTransactions,
   generatePaymentLink,
-  completePayment
+  completePayment,
+  // fetchDataAndTrainModel
 };

@@ -9,6 +9,7 @@ router.get("/get-product",UserController.getProducts);
 router.get("/get-transaction",UserController.getTransactions);
 router.post("/generate-payment-link",UserController.generatePaymentLink);
 router.post("/complete-payment",UserController.completePayment);
+// router.get("/fetch-dataAnd-train-model",UserController.fetchDataAndTrainModel);
 
 
 

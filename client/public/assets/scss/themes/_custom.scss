@@ -1,0 +1,478 @@
+/**=====================
+ custom CSS Start
+==========================**/
+
+.otp-input-wrapper > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px !important;
+}
+
+.otp-input-wrapper > div > input {
+  // @apply !w-[50px] h-[50px] bg-gray-600 text-dark-900 rounded-sm outline-none border border-gray-700 focus:border-gray-800
+
+  height: 50px;
+  width: 50px !important;
+  color: #000;
+  border-radius: 10px;
+  outline: none;
+  border: 1px solid #e5e5e5;
+}
+.file-preview {
+  position: absolute;
+  bottom: 100%;
+  width: 140px;
+  height: 100px;
+  padding: 0;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    padding: 0;
+  }
+
+  .icon_wrapper {
+    position: absolute;
+    padding: 4px;
+    width: 28px;
+    height: 28px;
+    border: 1px solid black;
+    background-color: white;
+    border-radius: 50%;
+    top: -12px;
+    right: -12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    cursor: pointer;
+  }
+}
+.main-preview-wrapper {
+  position: absolute;
+  bottom: 100%;
+  width: 100%;
+  left: 0px;
+  background-color: #F5F6FA;
+  border-bottom: 1px solid #e6e6e6;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  .file-preview {
+    width: 150px;
+    height: 120px;
+    border-radius: 6px;
+    overflow: hidden;
+    position: relative;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+    span {
+      &.close-icon {
+        width: 20px;
+        height: 20px;
+        background-color: red;
+        position: absolute;
+        top: 6px;
+        right: 6px;
+        z-index: 99;
+        cursor: pointer;
+        color: #fff;
+        font-size: 10px;
+      }
+    }
+  }
+}
+.otp-input-wrapper > div > input:focus {
+  border-color: var(--theme-default);
+}
+
+// you can add your custom css here
+// you can add your custom css here
+
+.btn_success {
+  background: green;
+  color: white;
+}
+
+.action_btn_list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+}
+
+.action_btn_list Button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  border-radius: 3px;
+  height: 38px;
+  width: 38px;
+  padding: 0px;
+}
+
+.btn_gray {
+  background-color: #929090 !important;
+  border: #929090 !important;
+  color: white !important;
+}
+
+// data table header
+.rdt_TableHead {}
+
+.steps{
+  max-width: 800px;
+  margin: auto;
+}
+
+.steps .step_main{
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.steps .step_main .step_wrapper{
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 8px;
+  width: 25%;
+  flex-direction: column;
+  position: relative;
+}
+
+/* .steps .step_main .line{
+} */
+
+.steps .step_main .step_wrapper::before{
+  content: '';
+  position: absolute;
+  background: #d4d4d4;
+  width: 100%;
+  height: 2px;
+  right: 50%;
+  top: 20px;
+}
+
+.steps .step_main .step_wrapper:first-child::before{
+  display: none;
+}
+
+.steps .step_main .step_wrapper .step_curcle{
+  height: 40px;
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #989898;
+  color: #fff;
+  z-index: 1;
+}
+
+.steps .step_main .step_wrapper .step_curcle.done{
+  background: var(--theme-default);
+  color: #fff;
+}
+
+.steps .step_main .step_wrapper .title{
+  color: #ababab;
+}
+
+.steps .step_main .step_wrapper.done_step .step_curcle{
+  background: var(--theme-default);
+  color: #fff;
+}
+
+.steps .step_main .step_wrapper.done_step.step_wrapper::before{
+  background: var(--theme-default);
+}
+
+.steps .step_main .step_wrapper.done_step .title{
+  color: #000;
+}
+
+.step-1{
+  max-width: 420px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-direction: column;
+}
+
+.copy_wrapper{
+  position: relative;
+  .copy_lable{
+    position: absolute;
+    background: var(--theme-default);;
+    top: -26px;
+    right: 0;
+    padding: 1px 4px;
+    border-radius: 4px;
+  }
+    .input_wrapper{
+      margin-bottom: 10px;
+      position: relative;
+      .copy_input{
+        border: 1px solid #e5e5e5;
+        border-radius: 24px;
+        outline: none;
+        box-shadow: none;
+        padding: 8px;
+        padding-right: 45px;
+      }
+      .btn-copy{
+        position: absolute;
+        right: 5px;
+        top: 3px;
+        padding: 0;
+        height: 32px;
+        width: 32px;
+        border-radius: 50%;
+        cursor: pointer;
+      }
+    }
+}
+// for data table header
+.rdt_TableHead {
+  // font-size: 14px !important;
+}
+
+.file_upload {
+  svg {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+.dropzon_container_active {
+  border: 2px dashed $primary-color !important;
+}
+
+.dropzon_container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+  border: 2px solid $primary-color;
+  background-color: rgba($primary-color, 0.2);
+  border-radius: 10px;
+  overflow: hidden !important;
+  cursor: pointer;
+  padding: 2px;
+
+  img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px;
+  }
+
+  svg {
+    width: 50px;
+    height: 50px;
+  }
+
+  @media (max-width:992px) {
+    height: 150px;
+  }
+}
+
+.phone-dropdown {
+  position: relative;
+  .react-international-phone-country-selector {
+    position: static;
+    button {
+      border: 1px dashed rgba(106, 113, 133, 0.3);
+    }
+    .react-international-phone-country-selector-dropdown {
+      width: 100%;
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+  .react-international-phone-input {
+    width: 100%;
+    border: 1px dashed rgba(106, 113, 133, 0.3);
+  }
+}
+.view-icon {
+  position: absolute;
+  right: 10px;
+  top: 9px;
+  font-size: 18px;
+  transform: translate(-50%);
+  cursor: pointer;
+}
+.support-message h6 span.title{
+  min-width: 100px;
+}
+
+.class_key {
+  position: relative;
+  display: flex;
+  align-items: center;
+  
+  .api-key-text {
+    padding-right: 40px; /* Ensure there's enough space for the button */
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden; 
+    text-overflow: ellipsis;
+    flex: 1; /* Take available space */
+  }
+  
+  .btn-copy {
+    height: 20px;
+    width: 20px;
+    min-width: unset;
+    padding: 0;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 10px; /* Consistent right position */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .copy_label {
+    position: absolute;
+    top: -25px;
+    right: 0;
+    background: var(--theme-secondary);
+    padding: 2px 4px;
+    border-radius: 4px;
+  }
+}
+
+
+.custom-search {
+  display: flex;
+  align-items: stretch;
+  .search-icon {
+    border: 1px dashed rgba(106, 113, 133, 0.3);
+    border-left: none;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    padding: 6px 8px;
+    svg {
+      width: 20px;
+      height: 18px;
+      stroke: rgba(61, 67, 74, 0.9);
+      fill: none;
+      vertical-align: sub;
+    }
+  }
+}
+
+.tbl_custome .rdt_Table{
+  min-width: 1600px;
+}
+
+.custom_avtar{
+  height: 100px;
+  width: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100%;
+  overflow: hidden;
+  border: 1px dashed #ccc;
+  img{
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.clear-button {
+  padding: 0;
+  font-size: 1.5rem;
+  color: hsl(138, 92%, 14%);
+}
+
+button, input, optgroup, select, textarea {
+  font-family: "Outfit" !important;
+}
+
+.form-control {
+  font-size: 13px;
+}
+
+.tooltip{
+  z-index: 9;
+}
+
+.rdt_Table{
+  .rdt_TableHead{
+    .rdt_TableHeadRow{
+      .rdt_TableCol{
+        .rdt_TableCol_Sortable >div{
+          font-size: 14px;
+        }
+      }
+    }
+  }
+  .rdt_TableBody{
+    .rdt_TableRow{
+      height: 52px;
+      min-height: 52px;
+    }
+  }
+}
+
+.badge-warning {
+  background-color: #FFCC00;
+  color: #000000;
+}
+
+.badge-success {
+  background-color: #28a745;
+  color: #fff;
+}
+
+.badge-danger {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+.badge-cancel {
+  background-color: #D77748;
+  color: #fff;
+}
+
+.badge-primary {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.badge-light {
+  background-color: #eb9191;
+  color: #fff;
+}
+
+.badge-info {
+  background-color: #5fc75c;
+  color: #fff;
+}
+
+.font-size-12{
+  font-size: 12px;
+}

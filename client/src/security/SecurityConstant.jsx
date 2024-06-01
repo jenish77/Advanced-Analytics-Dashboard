@@ -1,0 +1,1 @@
+export const AUTH_API_IV_KEY = process.env.NEXT_AUTH_API_IV_KEY;
