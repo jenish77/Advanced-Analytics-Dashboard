@@ -39,6 +39,12 @@
     python-forecasting = pyhton app.py
     ```
 
+```bash
+for database use mongodb://localhost:27017/ this url for generating and store data
+inside dashboard = mongodb://localhost:27017/dashboard table all data are stored 
+```
+
+
     ```bash
     run seeder to generate fake data using faker
     move directory to sevrer/src = seeders/orderSeeder.js for generating order data
