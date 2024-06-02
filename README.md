@@ -65,6 +65,7 @@ This project is an advanced analytics dashboard that provides insights and visua
 - Secure Payment Link Generation
 - Data filtering and sorting
 - Advanced Content Security
+- also implement disable ctrl+c, ctrl+v, f12, not allow scraping, disable Right-click context menus and Preventing access to the application’s data from network tools
 
 ## Technologies Used
 
