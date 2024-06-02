@@ -141,10 +141,10 @@ const AllTransactionContainer = () => {
   const ProductListTableAction = ({ data }: { data: AllTransactionType }) => {
     return (
       <div className="action_btn_list">
-        <Button className="btn_gray" id={`view${data._id}`} onClick={() => handleView(data)}>
+        {/* <Button className="btn_gray" id={`view${data._id}`} onClick={() => handleView(data)}>
           <FaEye size={17} />
           <CommonButtonsToolTip id={`view${data._id}`} toolTipText="View" />
-        </Button>
+        </Button> */}
         <Button className="btn_gray" id={`generateLink${data._id}`} onClick={() => handleGeneratePaymentLink(data.orderId, data.totalPrice)}>
           <FaLink size={17} />
           <CommonButtonsToolTip id={`generateLink${data._id}`} toolTipText="Generate Payment Link" />
