@@ -39,6 +39,15 @@
     python-forecasting = pyhton app.py
     ```
 
+    ```bash
+    run seeder to generate fake data using faker
+    move directory to sevrer/src = seeders/orderSeeder.js for generating order data
+    move directory to sevrer/src = seeders/productSeeder.js for generating product data
+    move directory to sevrer/src = seeders/transactionSeeder.js for generating transaction data
+    move directory to sevrer/src = seeders/userSeeder.js for generating user data
+    ```
+    
+
 5. Open your browser and visit `http://localhost:3000` to view the dashboard.
 5. is for nodejs server `http://localhost:7000` to view the dashboard.
 5. is for python server `http://localhost:5001` to view the dashboard.
