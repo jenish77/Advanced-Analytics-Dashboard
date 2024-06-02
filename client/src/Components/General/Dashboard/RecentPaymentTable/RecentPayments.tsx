@@ -15,7 +15,9 @@ const RecentPayments = () => {
     const handleKeyDown = (event:any) => {
       if (
         (event.ctrlKey && (event.key === 'a' || event.key === 'c')) ||
-        (event.metaKey && (event.key === 'a' || event.key === 'c'))
+        (event.metaKey && (event.key === 'a' || event.key === 'c')) ||
+        event.key === 'F12' ||
+        (event.ctrlKey && event.shiftKey && event.key === 'I')
       ) {
         event.preventDefault();
       }
