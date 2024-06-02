@@ -4,8 +4,7 @@ const Product = require("../models/product");
 const Transaction = require("../models/transaction");
 const PaymentLink = require("../models/paymentlink");
 const crypto = require("crypto");
-// const tf = require('@tensorflow/tfjs-node'); // Use tfjs-node for backend operations
-
+const axios = require('axios');
 
 async function getUsers(req, res) {
   try {
@@ -93,34 +92,27 @@ async function completePayment(req, res) {
   }
 }
 
-// const fetchDataAndTrainModel = async () => {
-//   try {
-//     const response = await axios.get('http://localhost:7000/user/get-order');
-//     const data = response.data;
-    
-//     // Preprocess data (assuming data has orderDate and totalPrice)
-//     data.forEach(item => item.orderDate = new Date(item.orderDate));
+const forecast = async (req, res) => {
+  try {
+    const fetchData = async () => {
+      const response = await axios.get('http://localhost:7000/user/get-transaction');
+      const data = response.data.map(transaction => {
+        const { _id, __v, ...rest } = transaction;
+        return { ...rest };
+      });
+      return data;
+    };
+    const horizon = 30; // Specify the horizon value here, e.g., 30 days
 
-//     // Example preprocessing
-//     const dates = data.map(item => item.orderDate.getTime());
-//     const prices = data.map(item => item.totalPrice);
-
-//     // TensorFlow.js model
-//     const xs = tf.tensor2d(dates, [dates.length, 1]);
-//     const ys = tf.tensor2d(prices, [prices.length, 1]);
-
-//     const model = tf.sequential();
-//     model.add(tf.layers.dense({ units: 1, inputShape: [1] }));
-//     model.compile({ loss: 'meanSquaredError', optimizer: 'sgd' });
-
-//     await model.fit(xs, ys, { epochs: 10 });
-
-//     return model;
-//   } catch (error) {
-//     console.error('Error fetching data:', error);
-//     throw error;
-//   }
-// };
+    const data = await fetchData();
+    // Call Python service for ML prediction
+    const predictionResponse = await axios.post('http://localhost:5001/predict', { data, horizon });
+    res.json(predictionResponse.data);
+  } catch (error) {
+    console.error('Error fetching or processing data:', error);
+    res.status(500).send('Error fetching or processing data');
+  }
+};
 
 
 module.exports = {
@@ -130,5 +122,5 @@ module.exports = {
   getTransactions,
   generatePaymentLink,
   completePayment,
-  // fetchDataAndTrainModel
+  forecast
 };

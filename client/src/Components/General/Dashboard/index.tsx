@@ -12,13 +12,13 @@ import AffiliateOverview from "./AffiliateOverview";
 const ProjectContainer = () => {
   return (
     <Container fluid className="dashboard-2 default-dashboard">
-      <Row className="mb-4 gy-4">
+      {/* <Row className="mb-4 gy-4">
         <UserInfoWelcome />
         <TotalOverView />
-      </Row>
+      </Row> */}
       <Row>
         <PaymentGrowth />
-        <PaymentStatistic />
+        {/* <PaymentStatistic /> */}
       </Row>
       <Row>
         <AffiliateOverview />

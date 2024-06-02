@@ -34,7 +34,7 @@ mongoose.connect('mongodb://localhost:27017/dashboard', {
 }).then(() => {
   console.log('Connected to MongoDB');
   // Call seedTransactions function after successful connection
-  seedTransactions(50); // Generate 10 transactions (you can change the number as per your requirement)
+  seedTransactions(500); // Generate 10 transactions (you can change the number as per your requirement)
 }).catch(err => {
   console.error('Error connecting to MongoDB:', err);
 });
