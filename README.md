@@ -27,7 +27,8 @@
 
     for the machine learning model
     cd python-forecasting
-    pip install
+    pip install flask prophet virtualenv pandas CORS
+    activate virtual environment = myenv\Scripts\activate 
     ```
 
 4. Start the development server:
@@ -41,6 +42,7 @@
 5. Open your browser and visit `http://localhost:3000` to view the dashboard.
 5. is for nodejs server `http://localhost:7000` to view the dashboard.
 5. is for python server `http://localhost:5001` to view the dashboard.
+
 
 ## Description
 
@@ -67,6 +69,9 @@ This project is an advanced analytics dashboard that provides insights and visua
 - Express
 - MongoDB
 
+## implementing machine learning model using below reference
+- https://pypi.org/project/prophet/
+
 ## AI Forecasting
 - this is image show the forecasting result from selected category 
 ![alt text](image.png)
@@ -90,7 +95,16 @@ This project is an advanced analytics dashboard that provides insights and visua
 -after completeing the transaction status would be updated in the payment list
 ![alt text](image-6.png)
 
+-static data for showing charts
+![alt text](image-11.png)
 
+- api for generating dynamic one time use payment link
+![alt text](image-8.png)
+
+
+-api for complete payment for transaction
+![alt text](image-9.png)
+![alt text](image-10.png)
 
 
 ## License
