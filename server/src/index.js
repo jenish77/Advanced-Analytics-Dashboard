@@ -23,7 +23,7 @@ const UserRoute = require('../src/routes/user')
 
 app.use('/user', UserRoute)
 
-const PORT = 7000; 
+ 
 
 mongoose.connect('mongodb://localhost:27017/dashboard')
   .then(() => {
@@ -40,7 +40,7 @@ mongoose.connect('mongodb://localhost:27017/dashboard')
   
 
 app.listen(PORT, () => {
-  console.log(`Server is listening on port ${PORT}....`);
+  console.log(`Server is listening on port ${process.env.port}....`);
 });
 
 module.exports = { app };
